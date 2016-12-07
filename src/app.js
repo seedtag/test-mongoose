@@ -43,6 +43,14 @@ db.on('disconnected', function() {
   console.warn('MongoDB disconnected!');
 });
 
+db.on('connected', function() {
+  console.info('MongoDB connected!');
+});
+
+db.on('reconnected', function() {
+  console.warn('MongoDB reconnected!');
+});
+
 db.once('open', () => {
   listen();
 })
